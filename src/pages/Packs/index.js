@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col, Button, Card, Modal, Form, Input } from 'antd';
+import { Row, Col, Button, Card, Modal, Form, Input, Pagination } from 'antd';
 import { Link } from 'react-router-dom';
 
 import './style.css';
@@ -74,6 +74,11 @@ export default function PacksPage() {
                         </p>
                     </Card>
                 </Link>
+            </Col>
+        </Row>
+        <Row gutter={20} style={{ marginTop: '40px' }}>
+            <Col span={24} style={{ textAlign: 'right' }}>
+                <Pagination defaultCurrent={1} total={50} />
             </Col>
         </Row>
         </>
