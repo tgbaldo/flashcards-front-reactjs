@@ -1,0 +1,97 @@
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+  
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s; 
+  }
+  
+  .trigger:hover {
+    color: #1890ff;
+  }
+  
+  .ant-layout {
+    background-color: #fff !important;
+  }
+
+  .ant-layout-content {
+    margin: 24px;
+  }
+
+  .ant-layout-content h1 {
+    font-size: 26px;
+  }
+
+  .ant-layout-content h1 p {
+    font-size: 14px;
+    color: #777;
+    font-weight: 350;
+  }
+  
+  .ant-layout-header {
+    background-color: #fff !important;
+    box-shadow: 0 2px 4px rgba(0,21,41,.08);
+    z-index: 1;
+  }
+  
+  .ant-menu-inline-collapsed > .ant-menu-item .anticon {
+    font-size: 20px !important;
+  }
+  
+  .ant-menu-inline > .ant-menu-item {
+    height: 52px !important;
+    line-height: 52px !important;
+  }
+  
+  #components-layout-demo-custom-trigger .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  #components-layout-demo-custom-trigger .trigger:hover {
+    color: #1890ff;
+  }
+  
+  #components-layout-demo-custom-trigger .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+
+  
+  .ant-menu-inline-collapsed > .ant-menu-item span {
+    display: inline-block;
+    max-width: 0;
+    opacity: 1;
+  }
+  
+  .ant-page-header-heading-title {
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    color: #343a42 !important
+  }
+  
+  .ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
+    text-align: right !important;
+  }
+  
+  .ant-tabs .ant-tabs-left-bar .ant-tabs-nav {
+    min-width: 140px !important;
+  }
+  
+  .opt-form input {
+    font-size: 14px !important;
+  }
+  
+  .ant-upload.ant-upload-drag {
+    height: 262px !important;
+  }
