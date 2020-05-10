@@ -1,10 +1,13 @@
-import React from 'react';
-import { Row, Col, Button, Card } from 'antd';
+import React, { useState } from 'react';
+import { Row, Col, Button, Card, Modal, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 
 import './style.css';
 
 export default function PacksPage() {
+
+    const [visibleModal, setVisibleModal] = useState(false);
+
     return (
         <>
         <Row gutter={20}>
@@ -12,7 +15,23 @@ export default function PacksPage() {
                 <h1>Packs<p>Nesta página você encontra seus packs de Flash Cards</p></h1>
             </Col>
             <Col span={12} style={{ textAlign: 'right' }}>
-                <Button size="large" type="primary">Novo Pack</Button>
+                <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Novo Pack</Button>
+                <Modal
+                    visible={visibleModal}
+                    title="Novo Pack"
+                    onOk={() => { setVisibleModal(false) }}
+                    onCancel={() => { setVisibleModal(false) }}
+                    footer={[
+                        <Button key="back" onClick={() => { setVisibleModal(false) }}>Cancelar</Button>,
+                        <Button key="submit" type="primary">Salvar</Button>,
+                    ]}
+                    >
+                    <Form layout="vertical">
+                        <Form.Item label="Nome">
+                            <Input type="text" size="large" name="name"></Input>
+                        </Form.Item>
+                    </Form>
+                </Modal>
             </Col>
         </Row>
         <Row gutter={20} style={{ marginTop: '20px' }}>
