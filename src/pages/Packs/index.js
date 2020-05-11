@@ -7,14 +7,23 @@ import './style.css';
 
 export default function PacksPage() {
     const [visibleModal, setVisibleModal] = useState(false);
+    const [cards, setCards] = useState(
+        [
+            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+        ]
+    );
 
-    const cards = [
-        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-    ];
+    const handleSubmit = values => {
+        cards.push({
+            "title": values.name,
+            "created_at": '22/05/2020'
+        });
+        setVisibleModal(false);  
+    };
 
     return (
         <>
@@ -27,16 +36,16 @@ export default function PacksPage() {
                 <Modal
                     visible={visibleModal}
                     title="Novo Pack"
+                    footer={false}
                     onOk={() => { setVisibleModal(false) }}
                     onCancel={() => { setVisibleModal(false) }}
-                    footer={[
-                        <Button key="back" onClick={() => { setVisibleModal(false) }}>Cancelar</Button>,
-                        <Button key="submit" type="primary">Salvar</Button>,
-                    ]}
                     >
-                    <Form layout="vertical">
-                        <Form.Item label="Nome">
-                            <Input type="text" size="large" name="name"></Input>
+                    <Form layout="vertical" onFinish={handleSubmit}>
+                        <Form.Item name="name" label="Nome" rules={[{ required: true, message: 'Campo obrigatório' }]}>
+                            <Input type="text" size="large" />
+                        </Form.Item>
+                        <Form.Item style={{ textAlign: 'right' }}>
+                            <Button htmlType="submit" size="large" key="submit" type="primary">Salvar</Button>
                         </Form.Item>
                     </Form>
                 </Modal>
