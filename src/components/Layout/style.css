@@ -28,6 +28,11 @@
     font-size: 26px;
   }
 
+  .ant-card-body p.card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
   .ant-layout-content h1 p {
     font-size: 14px;
     color: #777;

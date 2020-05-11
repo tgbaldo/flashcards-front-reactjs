@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
-import { Row, Col, Button, Card, Modal, Form, Input, Pagination } from 'antd';
+import { Button, Card, Modal, Form, Input, Pagination } from 'antd';
+import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './style.css';
 
 export default function PacksPage() {
-
     const [visibleModal, setVisibleModal] = useState(false);
+
+    const cards = [
+        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+        { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+    ];
 
     return (
         <>
-        <Row gutter={20}>
-            <Col span={12}>
+        <Row>
+            <Col md={6}>
                 <h1>Packs<p>Nesta página você encontra seus packs de Flash Cards</p></h1>
             </Col>
-            <Col span={12} style={{ textAlign: 'right' }}>
+            <Col md={6} style={{ textAlign: 'right' }}>
                 <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Novo Pack</Button>
                 <Modal
                     visible={visibleModal}
@@ -34,50 +42,24 @@ export default function PacksPage() {
                 </Modal>
             </Col>
         </Row>
-        <Row gutter={20} style={{ marginTop: '20px' }}>
-            <Col span={6}>
-                <Link to="" className="card-link">
-                    <Card>
-                        <h3>Curso de Inglês Mairo Vergara</h3>
-                        <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>
-                            Criado em 10/05/2020
-                        </p>
-                    </Card>
-                </Link>
-            </Col>
-            <Col span={6}>
-                <Link to="" className="card-link">
-                    <Card>
-                        <h3>Curso de Inglês Mairo Vergara</h3>
-                        <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>
-                            Criado em 10/05/2020
-                        </p>
-                    </Card>
-                </Link>
-            </Col>
-            <Col span={6}>
-                <Link to="" className="card-link">
-                    <Card>
-                        <h3>Curso de Inglês Mairo Vergara</h3>
-                        <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>
-                            Criado em 10/05/2020
-                        </p>
-                    </Card>
-                </Link>
-            </Col>
-            <Col span={6}>
-                <Link to="" className="card-link">
-                    <Card>
-                        <h3>Curso de Inglês Mairo Vergara</h3>
-                        <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>
-                            Criado em 10/05/2020
-                        </p>
-                    </Card>
-                </Link>
-            </Col>
+        <Row>
+            {cards.map((item) => {
+                return (
+                    <Col md={4} style={{ marginTop: '22px' }}>
+                        <Link to="" className="card-link">
+                            <Card>
+                                <p className="card-title">{item.title}</p>
+                                <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>
+                                    {item.created_at}
+                                </p>
+                            </Card>
+                        </Link>
+                    </Col>
+                )
+            })}
         </Row>
-        <Row gutter={20} style={{ marginTop: '40px' }}>
-            <Col span={24} style={{ textAlign: 'right' }}>
+        <Row style={{ marginTop: '40px' }}>
+            <Col style={{ textAlign: 'right' }}>
                 <Pagination defaultCurrent={1} total={50} />
             </Col>
         </Row>
