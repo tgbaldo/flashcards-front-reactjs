@@ -9,11 +9,11 @@ export default function PacksPage() {
     const [visibleModal, setVisibleModal] = useState(false);
     const [cards, setCards] = useState(
         [
-            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
-            { "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "id": "xpto000", "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "id": "xpto000", "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "id": "xpto000", "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "id": "xpto000", "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
+            { "id": "xpto000", "title": "Curso de Inglês Mario Vergara", "created_at": '10/05/2020' },
         ]
     );
 
@@ -55,7 +55,7 @@ export default function PacksPage() {
             {cards.map((item) => {
                 return (
                     <Col md={4} style={{ marginTop: '22px' }}>
-                        <Link to="" className="card-link">
+                        <Link to={`/packs/${item.id}/flash-cards`} className="card-link">
                             <Card>
                                 <p className="card-title">{item.title}</p>
                                 <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>
