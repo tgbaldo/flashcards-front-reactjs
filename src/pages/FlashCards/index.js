@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Card, Modal, Form, Input, Pagination, Tag, Menu, Dropdown } from 'antd';
+import { Button, Card, Modal, Form, Input, Pagination, Tag, Menu, Dropdown, Space } from 'antd';
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { EllipsisOutlined } from '@ant-design/icons'
@@ -26,7 +26,10 @@ export default function FlashCardsPage() {
                 <h1>Curso de Inglês Mairo Vergara<p>Gerencie os Flash Cards do seu Pack</p></h1>
             </Col>
             <Col md={6} style={{ textAlign: 'right' }}>
-                <Button size="large" type="primary">Estudar</Button>
+                <Space>
+                    <Button size="large" danger>Estudar</Button>
+                    <Button size="large" type="primary">Criar Flash Card</Button>
+                </Space>
             </Col>
         </Row>
         <Row>

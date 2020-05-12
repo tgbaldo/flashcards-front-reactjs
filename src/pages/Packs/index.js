@@ -32,7 +32,7 @@ export default function PacksPage() {
                 <h1>Packs<p>Nesta página você encontra seus packs de Flash Cards</p></h1>
             </Col>
             <Col md={6} style={{ textAlign: 'right' }}>
-                <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Novo Pack</Button>
+                <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Criar Pack</Button>
                 <Modal
                     visible={visibleModal}
                     title="Novo Pack"
