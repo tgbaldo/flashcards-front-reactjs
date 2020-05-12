@@ -19,14 +19,6 @@ export default function FlashCardsPage() {
         ]
     );
 
-    const handleSubmit = values => {
-        flashcards.push({
-            "title": values.name,
-            "created_at": '22/05/2020'
-        });
-        setVisibleModal(false);  
-    };
-
     return (
         <>
         <Row>
@@ -34,23 +26,7 @@ export default function FlashCardsPage() {
                 <h1>Curso de Inglês Mairo Vergara<p>Gerencie os Flash Cards do seu Pack</p></h1>
             </Col>
             <Col md={6} style={{ textAlign: 'right' }}>
-                <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Novo Pack</Button>
-                <Modal
-                    visible={visibleModal}
-                    title="Novo Pack"
-                    footer={false}
-                    onOk={() => { setVisibleModal(false) }}
-                    onCancel={() => { setVisibleModal(false) }}
-                    >
-                    <Form layout="vertical" onFinish={handleSubmit}>
-                        <Form.Item name="name" label="Nome" rules={[{ required: true, message: 'Campo obrigatório' }]}>
-                            <Input type="text" size="large" />
-                        </Form.Item>
-                        <Form.Item style={{ textAlign: 'right' }}>
-                            <Button htmlType="submit" size="large" key="submit" type="primary">Salvar</Button>
-                        </Form.Item>
-                    </Form>
-                </Modal>
+                <Button size="large" type="primary">Estudar</Button>
             </Col>
         </Row>
         <Row>

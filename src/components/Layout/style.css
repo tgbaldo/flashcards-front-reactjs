@@ -17,7 +17,7 @@
   }
   
   .ant-layout {
-    background-color: #fff !important;
+    background-color: #f5f5f54a !important;
   }
 
   .ant-layout-content {
@@ -99,4 +99,16 @@
   
   .ant-upload.ant-upload-drag {
     height: 262px !important;
+  }
+
+  button {
+    border-radius: 4px !important;
+  }
+
+  input {
+    border-radius: 4px !important;
+  }
+
+  .radius4 {
+    border-radius: 4px !important;
   }
