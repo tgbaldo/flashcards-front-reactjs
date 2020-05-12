@@ -22,7 +22,7 @@ export default function PacksPage() {
             "title": values.name,
             "created_at": '22/05/2020'
         });
-        setVisibleModal(false);  
+        setVisibleModal(false);
     };
 
     return (
@@ -35,7 +35,7 @@ export default function PacksPage() {
                 <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Criar Pack</Button>
                 <Modal
                     visible={visibleModal}
-                    title="Novo Pack"
+                    title="Criar Novo Pack"
                     footer={false}
                     onOk={() => { setVisibleModal(false) }}
                     onCancel={() => { setVisibleModal(false) }}
