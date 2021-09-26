@@ -36,7 +36,7 @@ export default class MainLayout extends React.Component {
               mode="inline"
               >
                 <Menu.Item key="1">
-                  <Link to="/packs"><FolderOutlined /><span>Packs</span></Link>
+                  <Link to="/decks"><FolderOutlined /><span>Decks</span></Link>
                 </Menu.Item>
               </Menu>
           </Sider>

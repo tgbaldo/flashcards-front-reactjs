@@ -4,8 +4,9 @@ import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './style.css';
+import { deckService } from '../../services/DeckService';
 
-export default function PacksPage() {
+export default function DecksPage() {
     const [visibleModal, setVisibleModal] = useState(false);
     const [cards, setCards] = useState(
         [
@@ -17,25 +18,22 @@ export default function PacksPage() {
         ]
     );
 
-    const handleSubmit = values => {
-        cards.push({
-            "title": values.name,
-            "created_at": '22/05/2020'
-        });
-        setVisibleModal(false);
-    };
+    const handleSubmit = async (values) => {
+      await  deckService.save({ name: values.name });
+      setVisibleModal(false);
+    }
 
     return (
         <>
         <Row>
             <Col md={6}>
-                <h1>Packs<p>Nesta página você encontra seus packs de Flash Cards</p></h1>
+                <h1>Decks<p>Nesta página você encontra seus decks de Flash Cards</p></h1>
             </Col>
             <Col md={6} style={{ textAlign: 'right' }}>
-                <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Criar Pack</Button>
+                <Button size="large" type="primary" onClick={() => { setVisibleModal(true) }}>Criar Deck</Button>
                 <Modal
                     visible={visibleModal}
-                    title="Criar Novo Pack"
+                    title="Criar Novo Deck"
                     footer={false}
                     onOk={() => { setVisibleModal(false) }}
                     onCancel={() => { setVisibleModal(false) }}
@@ -55,7 +53,7 @@ export default function PacksPage() {
             {cards.map((item) => {
                 return (
                     <Col md={4} style={{ marginTop: '22px' }}>
-                        <Link to={`/packs/${item.id}/flash-cards`} className="card-link">
+                        <Link to={`/decks/${item.id}/flash-cards`} className="card-link">
                             <Card>
                                 <p className="card-title">{item.title}</p>
                                 <p style={{ fontSize: '14px', color: '#777', fontWeight: 350 }}>

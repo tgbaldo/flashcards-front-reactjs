@@ -66,7 +66,7 @@ export default function FlashCardsPage() {
             {flashcards.map((item) => {
                 return (
                     <Col md={12} style={{ marginTop: '12px' }}>
-                        <Link to={`/packs/${item.id}/flash-cards`} className="card-link">
+                        <Link to={`/decks/${item.id}/flash-cards`} className="card-link">
                             <Card className="card-list">
                                 <Row>
                                     <Col md={6} style={{ textOverflow: 'ellipsis' }}>
